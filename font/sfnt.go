@@ -64,7 +64,7 @@ func (sfnt *SFNT) Kerning(left, right uint16) int16 {
 }
 
 func ParseSFNT(b []byte) (*SFNT, error) {
-	if len(b) < 12 || math.MaxUint32 < len(b) {
+	if len(b) < 12 || math.MaxInt32 < len(b) {
 		return nil, ErrInvalidFontData
 	}
 
